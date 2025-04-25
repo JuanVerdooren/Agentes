@@ -25,6 +25,9 @@ app.get('/agentes', async (req, res) => {
   }
 });
 
+
+
+
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Servidor corriendo en http://localhost:${PORT}/agentes`);

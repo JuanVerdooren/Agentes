@@ -4,17 +4,18 @@ require('dotenv').config();
 const [serverName, instanceName] = process.env.DB_SERVER.split('\\');
 
 const config = {
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  server: serverName,
+  user: 'admin2',
+  password: 'Juanbarra1',
+  server: '192.168.1.68', 
+  database: 'Agentes',
   options: {
-    instanceName: instanceName || undefined,  // solo si existe
+    instanceName: 'SQLEXPRESS', 
     encrypt: false,
     trustServerCertificate: true
   },
-  database: process.env.DB_DATABASE,
-  port: parseInt(process.env.DB_PORT) || undefined
+  port: 1433
 };
+
 
 const poolPromise = new sql.ConnectionPool(config)
   .connect()
